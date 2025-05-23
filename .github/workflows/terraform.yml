@@ -36,8 +36,8 @@ jobs:
       run: |
         terraform plan -input=false \
           -var="vpc_id=${{ secrets.VPC_ID }}" \
-          -var="db_user=${{ secrets.SUB_NET_1 }}" \
-          -var="db_password=${{ secrets.SUB_NET_2 }}" \
+          -var="subnet1=${{ secrets.SUB_NET_1 }}" \
+          -var="subnet2=${{ secrets.SUB_NET_2 }}" \
           -out=tfplan
 
     - name: Terraform Apply
