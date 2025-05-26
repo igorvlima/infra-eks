@@ -2,7 +2,6 @@ provider "aws" {
   region = "us-east-1" 
 }
 
-
 resource "aws_security_group" "eks_sg" {
 vpc_id = var.vpc_id
 name   = "eks_sg"
@@ -60,7 +59,6 @@ resource "aws_iam_role_policy_attachment" "eks_role_eks_service" {
   role       = aws_iam_role.eks_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
 }
-
 
 resource "aws_iam_role" "eks_node_role" {
   name = "my-eks-node-role"
